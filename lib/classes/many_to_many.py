@@ -81,8 +81,7 @@ class Author:
 
     def topic_areas(self):
         topic_areas = list({magazine.category for magazine in self.magazines()})
-        # ipdb.set_trace()
-        # topic_areas if topic_areas else None
+        
         if topic_areas:
             return topic_areas
         else:
