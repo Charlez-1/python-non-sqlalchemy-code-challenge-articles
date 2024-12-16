@@ -102,7 +102,7 @@ class Magazine:
     @name.setter
     def name(self, new_name):
         if isinstance(new_name, str):
-            # ipdb.set_trace()
+            
             if 2 <= len(new_name) <= 16:
                 self._name = new_name
             else: 
@@ -155,3 +155,19 @@ class Magazine:
 
     def __repr__(self):
         return f'<Magazine: name = {self.name}, category = {self.category}>'
+    
+author_1 = Author("Carry Bradshaw")
+author_2 = Author("Nathaniel Hawthorne")
+magazine_1 = Magazine("Vogue", "Fashion")
+magazine_2 = Magazine("AD", "Architecture")
+author_1.add_article(magazine_1, "How to wear a tutu with style")
+author_1.add_article(magazine_2, "Carrara Marble is so 2020")
+author_2.add_article(magazine_2, "2023 Eccentric Design Trends")
+
+print(f"{author_1.name}'s Articles: {[article.title for article in author_2.articles()]}")
+print(f"{author_2.name}'s Articles: {[article.title for article in author_2.articles()]}")
+print(f"{author_1.name}'s Magazines: {[magazine.name for magazine in author_2.magazines()]}")
+print(f"{author_2.name}'s Magazines: {[magazine.name for magazine in author_2.magazines()]}")
+print(f"{author_1.name}'s Topic Areas: {author_2.topic_areas()}")
+print(f"Articles in {magazine_1.name}: {[article.title for article in magazine_1.articles()]}")
+print(f"Article Titles in {magazine_2.name}: {[article.title for article in magazine_2.articles()]}")
